@@ -69,7 +69,7 @@ export default function App() {
     <>
       <InputPesquisa setProdutos={setProdutos} />
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white mb-2">
+        <h1 className="text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-900 mb-2">
           Produtos em Destaque
         </h1>
         <div className="h-2 w-32 bg-blue-700 rounded mb-8"></div>
@@ -84,7 +84,7 @@ export default function App() {
         </div>
 
         {/* Seção dos produtos restantes */}
-        <h2 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-200">Todos os Produtos</h2>
+        <h2 className="text-2xl font-bold mb-3 text-gray-800 dark:text-gray-900">Todos os Produtos</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
           {produtosRestantes.map((produto) => (
             <CardProduto data={produto} key={produto.id} />

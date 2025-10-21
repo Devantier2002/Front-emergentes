@@ -2,7 +2,7 @@ import './MinhasPropostas.css'
 import { useEffect, useState } from "react";
 import { useClienteStore } from "./context/ClienteContext";
 import type { VendaType } from "./utils/VendaType";
-import type { OculosType } from "./utils/OculosType";
+// removed OculosType import — using the oculos field directly from VendaType
 
 const apiUrl = import.meta.env.VITE_API_URL
 
@@ -30,7 +30,7 @@ export default function Vendas() {
 
     const vendasTable = Array.isArray(vendas)
         ? vendas.map(venda => {
-            const oculos = venda.oculos as OculosType | undefined;
+            const oculos = venda.oculos;
             return (
                 <tr key={venda.id} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">

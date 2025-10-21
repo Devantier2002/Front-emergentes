@@ -41,6 +41,7 @@ export default function AdminProdutos() {
               <th scope="col" className="px-6 py-3">Preço R$</th>
               <th scope="col" className="px-6 py-3">Quantidade</th>
               <th scope="col" className="px-6 py-3">Destaque</th>
+              <th scope="col" className="px-6 py-3">Descrição</th>
             </tr>
           </thead>
           <tbody>
@@ -52,6 +53,10 @@ export default function AdminProdutos() {
                 <td className="px-6 py-4">{Number(produto.preco).toLocaleString("pt-br", { minimumFractionDigits: 2 })}</td>
                 <td className="px-6 py-4">{produto.quantidade}</td>
                 <td className="px-6 py-4">{produto.destaque ? "Sim" : "Não"}</td>
+                <td className="px-6 py-4">{produto.descricao}</td>
+                <td className="px-6 py-4">
+                  <Link to={`/admin/produtos/${produto.id}`} className="text-blue-600 hover:underline">Editar</Link>
+                </td>
               </tr>
             ))}
           </tbody>
