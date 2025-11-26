@@ -21,8 +21,10 @@ import AdminCompras from './admin/AdminCompras.tsx';
 import AdminCadAdmin from './admin/AdminCadAdmin.tsx';          
 import AdminNovoAdmin from './admin/AdminNovoAdmin.tsx';
 
+
 import Layout from './Layout.tsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import Chatbot from './components/ChatBot.tsx';
 
 const rotas = createBrowserRouter([
   {
@@ -54,6 +56,7 @@ const rotas = createBrowserRouter([
   { path: 'cadCliente', element: <CadCliente /> },
   { path: 'sobre', element: <Sobre /> },
   { path: 'contato', element: <Contato /> },
+  { path: 'chatbot', element: <Chatbot /> },
     ],
   },
 ])
