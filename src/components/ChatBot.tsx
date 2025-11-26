@@ -41,45 +41,48 @@ async function sendMessage() {
       <h2>Chat com o Vendedor 👓</h2>
 
       <div style={{
-        border: "1px solid #ccc",
-        padding: 10,
-        height: 300,
-        overflowY: "auto",
-        borderRadius: 8,
-        background: "#fafafa"
+      border: "1px solid #ccc",
+      padding: 10,
+      height: 300,
+      overflowY: "auto",
+      borderRadius: 8,
+      background: "#fafafa"
       }}>
-        {messages.map((m, i) => (
-          <div key={i} style={{
-            textAlign: m.from === "user" ? "right" : "left",
-            marginBottom: 10
-          }}>
-            <div style={{
-              display: "inline-block",
-              padding: "8px 12px",
-              borderRadius: 12,
-              background: m.from === "user" ? "#0070f3" : "#e5e5ea",
-              color: m.from === "user" ? "white" : "black"
-            }}>
-              {m.text}
-            </div>
-          </div>
-        ))}
-        {loading && <div style={{ marginTop: 10, fontStyle: "italic", color: "#888" }}>Vendedor digitando...</div>}
+      {messages.map((m, i) => (
+        <div key={i} style={{
+        textAlign: m.from === "user" ? "right" : "left",
+        marginBottom: 10
+        }}>
+        <div style={{
+          display: "inline-block",
+          padding: "8px 12px",
+          borderRadius: 12,
+          background: m.from === "user" ? "#0070f3" : "#e5e5ea",
+          color: m.from === "user" ? "white" : "black"
+        }}>
+          {m.text}
+        </div>
+        </div>
+      ))}
+      {loading && <div style={{ marginTop: 10, fontStyle: "italic", color: "#888" }}>Vendedor digitando...</div>}
       </div>
 
       <div style={{ display: "flex", marginTop: 10 }}>
-        <input
-          value={input}
-          onChange={e => setInput(e.target.value)}
-          placeholder="Pergunte sobre óculos..."
-          style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid #ccc" }}
-        />
-        <button
-          style={{ marginLeft: 10, padding: "0 20px", borderRadius: 8, background: "#0070f3", color: "white" }}
-          onClick={sendMessage}
-        >
-          Enviar
-        </button>
+      <input
+        value={input}
+        onChange={e => setInput(e.target.value)}
+        onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); sendMessage(); } }}
+        placeholder="Pergunte sobre óculos..."
+        style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid #ccc" }}
+      />
+      <button
+        type="button"
+        style={{ marginLeft: 10, padding: "0 20px", borderRadius: 8, background: "#0070f3", color: "white" }}
+        onClick={sendMessage}
+        disabled={loading}
+      >
+        Enviar
+      </button>
       </div>
     </div>
   );
