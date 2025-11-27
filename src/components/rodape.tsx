@@ -35,7 +35,7 @@ export default function Rodape() {
             </div>
 
             {/* Linha final */}
-            <div className="border-t border-blue-700 dark:border-gray-700 text-center py-3 text-sm text-gray-200 dark:text-gray-400">
+            <div className="border-t border-blue-700 dark:border-gray-700 text-center py-3 text-sm text-gray-200 dark:text-gray-400 text">
                 © {new Date().getFullYear()} Ótica Avenida — Todos os direitos reservados
             </div>
         </footer>
